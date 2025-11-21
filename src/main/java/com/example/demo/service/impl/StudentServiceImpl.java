@@ -31,10 +31,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudentById(Long id) {
 
-        System.out.println("Hello lala");
         Student student = studentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Student not found with this id."));
 
-        System.out.println("lala nay world");
         return modelMapper.map(student,StudentDto.class);
     }
 }
